@@ -1,0 +1,89 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+	<ItemDefinitionGroup>
+		<ClCompile>
+			<AdditionalIncludeDirectories>$(MSBuildThisFileDirectory)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+		</ClCompile>
+	</ItemDefinitionGroup>
+	<Target Name="libjpeg_turbo_linking" BeforeTargets="Link;Lib" DependsOnTargets="$(ComputeLinkInputsTargets)">
+		<PropertyGroup Condition="'$(MYRuntimeLibrary)' == ''">
+			<MYRuntimeLibrary>%(ClCompile.RuntimeLibrary)</MYRuntimeLibrary>
+		</PropertyGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v120' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86') And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Debug\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Debug\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Release\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\Win32\Release\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v120' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
+			<Link>  
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Debug\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Debug\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Release\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v120\windesktop\msvcstl\x64\Release\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup  Condition="'$(PlatformToolset)' == 'v140' And ('$(Platform)' == 'Win32' Or '$(Platform)' == 'x86')  And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Debug\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Debug\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Release\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\Win32\Release\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'v140' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' == ''">
+			<Link>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebugDll' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Debug\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDebug' And '$(Configuration)' == 'Debug'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Debug\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreadedDll' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release\md\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+				<AdditionalDependencies Condition="'$(MYRuntimeLibrary)' == 'MultiThreaded' And '$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\lib\native\v140\windesktop\msvcstl\x64\Release\mt\libjpeg-turbo.lib;%(AdditionalDependencies)</AdditionalDependencies>
+			</Link>
+		</ItemGroup>
+
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x86' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\liblibjpeg-turbo.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\liblibjpeg-turbo.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\liblibjpeg-turbo.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\liblibjpeg-turbo.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\liblibjpeg-turbo.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\liblibjpeg-turbo.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\liblibjpeg-turbo.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\liblibjpeg-turbo.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\liblibjpeg-turbo.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\liblibjpeg-turbo.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\liblibjpeg-turbo.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\liblibjpeg-turbo.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'DynamicLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\liblibjpeg-turbo.so" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\liblibjpeg-turbo.so" />
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\liblibjpeg-turbo.so"/> 
+			<MyPackageSourceFiles Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\liblibjpeg-turbo.so"/> 
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x86' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86\liblibjpeg-turbo.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86\liblibjpeg-turbo.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'x64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\x86_64\liblibjpeg-turbo.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\x86_64\liblibjpeg-turbo.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\armeabi\liblibjpeg-turbo.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\armeabi\liblibjpeg-turbo.a" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(PlatformToolset)' == 'Clang_3_8' And '$(Platform)' == 'ARM64' And '$(AndroidAPILevel)' != '' And '$(ConfigurationType)' == 'StaticLibrary'">
+			<Link Condition="'$(Configuration)' == 'Debug'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Debug\arm64-v8a\liblibjpeg-turbo.a" />
+			<Link Condition="'$(Configuration)' == 'Release'" Include="$(MSBuildThisFileDirectory)..\..\lib\native\android\clang\Release\arm64-v8a\liblibjpeg-turbo.a" />
+		</ItemGroup>
+		<Copy SourceFiles="@(MyPackageSourceFiles)" DestinationFolder="$(OutputPath)" /> 
+		<Error Condition="'$(PlatformToolset)' != 'Clang_3_8' And '$(AndroidAPILevel)' != ''" Text="The Libjpeg-Turbo NuGet package only contains binaries for Clang_3_8. GCC has been depreciated for ndk development, USE CLANG" />
+		<Error Condition="'$(UseOfStl)' != 'c++_static' And '$(UseOfStl)' != 'c++_shared' And '$(AndroidAPILevel)' != ''" Text="libjpeg-turbo requires linking against the LLVM libc++. Please set Project Properties -> Configuration Properties -> General -> Use of STL to be 'LLVM libc++'."  />
+		</Target>
+	</Project>

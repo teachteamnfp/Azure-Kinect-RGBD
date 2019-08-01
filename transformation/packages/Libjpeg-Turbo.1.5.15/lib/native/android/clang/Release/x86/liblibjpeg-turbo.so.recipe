@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project>
+  <SOLibPaths>C:\Users\scott\Documents\GitHub\Libjpeg-Turbo_Nuget\Libjpeg-turbo-VS\../libjpeg_turbo_nuget\lib\native\android\clang\Release\x86\liblibjpeg-turbo.so;C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r13b\prebuilt\android-x86\gdbserver\gdbserver;C:\ProgramData\Microsoft\AndroidNDK\android-ndk-r13b\sources\cxx-stl\llvm-libc++\libs\x86\libc++_shared.so</SOLibPaths>
+  <AndroidLibPaths />
+  <OObjPaths>C:\Users\scott\Documents\GitHub\Libjpeg-Turbo_Nuget\Libjpeg-turbo-VS\Intermediate\x86\Release_shared\libjpeg-turbo-x86</OObjPaths>
+  <Configuration>Release_shared</Configuration>
+  <Platform>x86</Platform>
+  <AndroidArchitecture>x86</AndroidArchitecture>
+  <!--links to other recipe files-->
+  <RecipeFiles />
+</project>
