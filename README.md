@@ -5,10 +5,10 @@ Requires the [Azure Kinect Sensor SDK](https://github.com/microsoft/Azure-Kinect
 
 Compilable in Visual Studio 2017 and can be run through Windows command prompt.
 
-'''
+```
 C:\>cd {directory of transformation.exe}
 C:\{directory}>transformation.exe capture {output directory} {# frames}
-'''
+```
 
 Resulting point clouds are viewable in CloudCompare or similar software.
 
